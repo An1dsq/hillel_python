@@ -1,5 +1,6 @@
 
 def date_to_normal(date):
     list_date = date.split('.')
-    international_date = list_date[1] + '.' + list_date[0] + '.' + list_date[2]  # Выглядит раково
+    list_date[0], list_date[1] = list_date[1], list_date[0]
+    international_date = '.'.join(list_date)
     return international_date
