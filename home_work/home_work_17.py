@@ -8,7 +8,7 @@ def solve_quadratic_equation(a, b, c):  # returns 2 values: either 2 roots, 1 ro
         root_2 = (-b - math.sqrt(discriminant)) / (2 * a)
         return root_1, root_2
     elif discriminant == 0:
-        root_1 = (-b + math.sqrt(discriminant)) / 2 * a
+        root_1 = (-b + math.sqrt(discriminant)) / (2 * a)
         return root_1, None
     elif discriminant < 0:
         return None, None
