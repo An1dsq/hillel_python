@@ -11,15 +11,15 @@ def calc_frequency(lst):  # returns the most frequent number or None
             count_2 += 1
         elif elem == 1:
             count_3 += 1
-    if count_1 != count_2 or count_1 != count_3 or count_2 != count_3:
+    if count_1 == count_2 or count_1 == count_3 or count_2 == count_3:
+        return None
+    else:
         if count_1 > count_2 and count_1 > count_3:
             result = -1
         elif count_2 > count_1 and count_2 > count_3:
             result = 0
         elif count_3 > count_1 and count_3 > count_2:
             result = 1
-        else:
-            return None
     return result
 
 
