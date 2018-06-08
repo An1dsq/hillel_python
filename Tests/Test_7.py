@@ -8,9 +8,9 @@ def sum_of_fib(count):
     while len(result) < count:
         result.append((number + number2))
         if number < number2:
-            number = int(result[-1])
+            number = result[-1]
         else:
-            number2 = int(result[-1])
+            number2 = result[-1]
     print(result)
     return sum(result)
 
