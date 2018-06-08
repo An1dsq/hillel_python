@@ -6,7 +6,7 @@ while result < 15:
     y = randint(2, 9)
     ident = str(x) + str(y)
     ident2 = str(y) + str(x)
-    if ident not in already_printed or ident2 not in already_printed:
+    if ident not in already_printed:
         print(x, ' x ', y)
         already_printed.add(ident)
         already_printed.add(ident2)
