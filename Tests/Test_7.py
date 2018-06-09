@@ -2,9 +2,7 @@
 def sum_of_fib(count):
     number = 1
     number2 = 1
-    result = []  # Don't know how to assign the variables to the list during it's initialization
-    result.append(number)
-    result.append(number2)
+    result = [number, number2]
     while len(result) < count:
         result.append((number + number2))
         if number < number2:
