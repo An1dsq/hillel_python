@@ -9,8 +9,7 @@ def encode(str_to_encode):  # returns enсoded string
         if str_to_encode[i].lower() in table:
             index = table.find(str_to_encode[i].lower())
             if index >= len(table) - step:
-                index = abs(step - (len(table) - index))
-                encoded_str += table[index]
+                encoded_str += table[(index + step) % len(table)]
             else:
                 encoded_str += table[index + step]
         else:
