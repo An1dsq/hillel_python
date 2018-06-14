@@ -1,30 +1,24 @@
 def exotic_sorter(lst):
+    mix_lst = list(map(list, zip(*lst)))
     for i in range(len(lst)):
-        for j in range(len(lst[i]) - 2):
+        for j in range(len(lst[i])):
             if i % 2 == 0:
-                lst[i].sort(reverse=True)
+                mix_lst[i].sort(reverse=True)
             else:
-                lst[i].sort()
-    return lst
+                mix_lst[i].sort()
+    result = list(map(list, zip(*mix_lst)))
+    return result
 
 
-# def sort(lst, reverse=0):
-#     for i in range(len(lst) - 1):
-#         for _ in lst:
-#             if reverse:
-#                 if lst[i] > lst[i+1]:
-#                     lst[i],  lst[i+1] = lst[i+1], lst[i]
-#                     if i + 1 != len(lst) - 1:
-#                         i += 1
-#             else:
-#                 if lst[i] < lst[i+1]:
-#                     lst[i],  lst[i+1] = lst[i+1], lst[i]
-#                     if i + 1 != len(lst) - 1:
-#                         i += 1
-#     return lst
+def pretty_print(lst):
+    for i in range(len(lst)):
+        for j in lst[i]:
+            print(j, end=' ')
+        print()
 
 
-unsorted_list = [[1, 3, 2], [4, 6, 5], [7, 9, 8], [10, 13, 12], [14, 16, 15], [17, 19, 18]]
-print(id(unsorted_list), unsorted_list)
-exotic_sorter(unsorted_list)
-print(id(unsorted_list), unsorted_list)
+unsorted_list = [[1, 2, 3], [4, 5, 6], [7, 8, 9]]
+pretty_print(unsorted_list)
+print('----------')
+pretty_print(exotic_sorter(unsorted_list))
+
